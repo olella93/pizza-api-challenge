@@ -13,4 +13,16 @@ with app.app_context():
     Restaurant.query.delete()
     Pizza.query.delete()
 
-    
+    # Create Restaurants
+    r1 = Restaurant(name="Mama's Pizza", address="123 Main Street")
+    r2 = Restaurant(name="Kiki's Pizza", address="456 Side Avenue")
+
+    # Create Pizzas
+    p1 = Pizza(name="Emma", ingredients="Dough, Tomato Sauce, Cheese")
+    p2 = Pizza(name="Pepperoni Blast", ingredients="Dough, Tomato Sauce, Pepperoni, Cheese")
+    p3 = Pizza(name="Veggie Delight", ingredients="Dough, Tomato Sauce, Peppers, Olives, Onions, Cheese")
+
+    db.session.add_all([r1, r2, p1, p2, p3])
+    db.session.commit()
+
+   
