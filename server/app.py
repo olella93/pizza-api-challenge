@@ -20,4 +20,13 @@ def create_app():
     from .models.pizza import Pizza
     from .models.restaurant_pizza import RestaurantPizza
 
-    
+    # Registering Blueprints 
+    from .controllers.restaurant_controller import restaurant_bp
+    from .controllers.pizza_controller import pizza_bp
+    from .controllers.restaurant_pizza_controller import restaurant_pizza_bp
+
+    app.register_blueprint(restaurant_bp)
+    app.register_blueprint(pizza_bp)
+    app.register_blueprint(restaurant_pizza_bp)
+
+    return app
