@@ -25,3 +25,44 @@ A RESTful API for managing restaurants, pizzas, and the relationships between th
 ├── challenge-1-pizzas.postman_collection.json
 └── README.md
 
+
+##  Setup Instructions
+
+1. **Clone the Repository**
+   ```bash
+   git clone <your-repo-url>
+   cd pizza-api-challenge
+
+2. **Create Virtual Environment
+
+   pipenv install flask flask_sqlalchemy flask_migrate
+   pipenv shell
+
+3. **Initialize the Database
+
+   export FLASK_APP=server/app.py
+   flask db init
+   flask db migrate -m "Initial migration"
+   flask db upgrade
+
+4. **Seed the Database
+   
+   python server/seed.py
+
+5. **Run the App
+
+   flask run
+
+### Models Overview
+
+**Restaurant
+
+- id: primary key
+- name: string
+- address: string
+- has many RestaurantPizzas
+- Cascade deletes applied
+
+
+
+
