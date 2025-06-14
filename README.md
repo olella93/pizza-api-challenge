@@ -35,7 +35,7 @@ A RESTful API for managing restaurants, pizzas, and the relationships between th
 
 2. ## Create Virtual Environment
    
-```bash
+
    pipenv install flask flask_sqlalchemy flask_migrate
    pipenv shell
 
