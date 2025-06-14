@@ -28,34 +28,34 @@ A RESTful API for managing restaurants, pizzas, and the relationships between th
 
 ##  Setup Instructions
 
-1. ##Clone the Repository**
+1. ## Clone the Repository**
    ```bash
    git clone <your-repo-url>
    cd pizza-api-challenge
 
-2. ##Create Virtual Environment
+2. ## Create Virtual Environment
 
    pipenv install flask flask_sqlalchemy flask_migrate
    pipenv shell
 
-3. ##Initialize the Database
+3. ## Initialize the Database
 
    export FLASK_APP=server/app.py
    flask db init
    flask db migrate -m "Initial migration"
    flask db upgrade
 
-4. ##Seed the Database
+4. ## Seed the Database
    
    python server/seed.py
 
-5. ##Run the App
+5. ## Run the App
 
    flask run
 
 ### Models Overview
 
-##Restaurant
+## Restaurant
 
 - id: primary key
 - name: string
@@ -63,14 +63,14 @@ A RESTful API for managing restaurants, pizzas, and the relationships between th
 - has many RestaurantPizzas
 - Cascade deletes applied
 
-##Pizza
+## Pizza
 
 - id: primary key
 - name: string
 - ingredients: string
 - has many RestaurantPizzas
 
-##RestaurantPizza (Join Table)
+## RestaurantPizza (Join Table)
 
 - id: primary key
 - price: integer (1–30 only)
@@ -78,12 +78,12 @@ A RESTful API for managing restaurants, pizzas, and the relationships between th
 - pizza_id: foreign key
 - belongs to Restaurant and Pizza
 
-###API Endpoints
+### API Endpoints
 
 GET /restaurants
 Returns a list of all restaurants.
 
-###GET /restaurants/<int:id>
+### GET /restaurants/<int:id>
 
 Returns a single restaurant with all associated pizzas.
 
@@ -91,7 +91,7 @@ If not found:
 
 { "error": "Restaurant not found" }
 
-##DELETE /restaurants/<int:id>
+## DELETE /restaurants/<int:id>
 Deletes a restaurant and its associated RestaurantPizzas.
 
 If successful: 204 No Content
@@ -138,7 +138,7 @@ Validation Error:
   "errors": ["Price must be between 1 and 30"]
 }
 
-###Testing with Postman
+### Testing with Postman
 
 Open Postman
 Import challenge-1-pizzas.postman_collection.json
