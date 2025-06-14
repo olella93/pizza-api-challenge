@@ -41,7 +41,7 @@ A RESTful API for managing restaurants, pizzas, and the relationships between th
 
 3. ## Initialize the Database
 
-```bash
+
    export FLASK_APP=server/app.py
    flask db init
    flask db migrate -m "Initial migration"
@@ -49,11 +49,11 @@ A RESTful API for managing restaurants, pizzas, and the relationships between th
 
 4. ## Seed the Database
    
-```bash
+
    python server/seed.py
 
 5. ## Run the App
-```bash
+
    flask run
 
 ### Models Overview
@@ -92,7 +92,7 @@ Returns a single restaurant with all associated pizzas.
 
 If not found:
 
-```json   
+  
 { "error": "Restaurant not found" }
 
 ## DELETE /restaurants/<int:id>
@@ -101,7 +101,7 @@ Deletes a restaurant and its associated RestaurantPizzas.
 If successful: 204 No Content
 If not found:
 
-```json
+
 { "error": "Restaurant not found" }
 
 GET /pizzas
@@ -112,7 +112,7 @@ Creates a new RestaurantPizza.
 
 Request:
 
-```json
+
 {
   "price": 12,
   "pizza_id": 1,
@@ -121,7 +121,7 @@ Request:
 
 Success Response:
 
-```json
+
 {
   "id": 4,
   "price": 12,
@@ -141,7 +141,7 @@ Success Response:
 
 Validation Error:
 
-```json
+
 {
   "errors": ["Price must be between 1 and 30"]
 }
